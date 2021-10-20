@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.container{
+    padding: 50px 0;
+    width: 1000px;
+    margin: auto;
+}
+
+
+.section-left{
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    padding-left: 10px;
+    line-height: 50px;
+}
+
+#btn-start-game{
+    padding: 1px 35px;
+}
+
+#game-level{
+    padding: 1px 40px 1px 0;
+}
+
+main{
+    background-color: #7fffd4;
+}
+
+.grid-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+
+.cell{
+    border: 1px solid;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell-easy{
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+}
+.cell-normal{
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+.cell-hard{
+    height: calc(100% / 7);
+    width: calc(100% / 7);
+}
+
+footer{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.bg-click{
+    background-color: red;
+    color: white;
+    border-color: black;
+}
