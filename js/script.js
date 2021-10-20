@@ -3,6 +3,9 @@ const selectLivelloDifficolta = document.getElementById("game-level");
 const btnStartGame = document.getElementById("btn-start-game");
 const gridContainer = document.querySelector(".grid-container");
 
+let numBombe;
+
+console.log("riga 8 " + numBombe);
 // metto in ascolto il pulsante
 btnStartGame.addEventListener("click", function () {
     //   creo variabile che legge il valore della select
@@ -17,9 +20,10 @@ btnStartGame.addEventListener("click", function () {
     let quantitaBombe = 16;
     console.log("quantità bombe " + quantitaBombe);
 
-    let numBombe = posizioniBombe(16, numeroCelle);
-    console.log(numBombe);
+    numBombe = posizioniBombe(16, numeroCelle);
+    console.log("riga 24 " + numBombe);
 
+    return numeroCelle;
 
 
 });
@@ -82,10 +86,21 @@ function gridGenerator(numCell) {
 
     }
 }
+
+
 //funzione per il clik sulle celle
 function bgClick() {
-    this.classList.toggle("bg-click");
+    //this.classList.toggle("bg-click");
 
+    const numeroCellaCorrente = parseInt(this.textContent);
+    console.log("hai cliccato la cella n " + numeroCellaCorrente);
+    if (numBombe.includes(numeroCellaCorrente)) {
+        this.classList.add("bomb");
+        alert("hai beccato una bomba");
+    }
+    else {
+        this.classList.add("bg-click");
+    }
 }
 
 

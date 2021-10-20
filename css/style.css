@@ -78,6 +78,11 @@ footer{
 }
 
 .bg-click{
+    background-color: rgb(43, 120, 237);
+    color: white;
+    border-color: black;
+}
+.bomb{
     background-color: red;
     color: white;
     border-color: black;
