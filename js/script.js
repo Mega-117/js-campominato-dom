@@ -14,8 +14,8 @@ btnStartGame.addEventListener("click", function () {
     //uso una funzione per creare tante celle quante quelle calcolate nella let usata per calcolare il numero delle celle
     gridGenerator(numeroCelle);
 
-    let numeroBombe = randomNumGeneretor(1, numeroCelle);
-    console.log(numeroBombe);
+    let quantitaBombe = 16;
+    console.log("quantità bombe " + quantitaBombe);
 
     let numBombe = posizioniBombe(16, numeroCelle);
     console.log(numBombe);
@@ -75,6 +75,7 @@ function gridGenerator(numCell) {
         cell.innerHTML += cellContent;
 
 
+
         //metto in ascolto la cella
         //al click applica la funzione che toglie e mette la classe per il bg
         cell.addEventListener("click", bgClick);
@@ -103,9 +104,21 @@ function randomNumGeneretor(numMin, numMax) {
 function posizioniBombe(numBombe, numCelle) {
 
     let arrayBombe = [];
-    while (arrayBombe.length < 16) {
+    while (arrayBombe.length < numBombe) {
         let numRandom = randomNumGeneretor(1, numCelle);
-        console.log(numRandom);
-        arrayBombe.push(numRandom);
+
+        //devo controllare che i numeri inseriti sia non univoci
+        let numeroDoppione = arrayBombe.includes(numRandom);// numero doppione è numRando incluso in arrayBombe
+
+        if (!numeroDoppione) {
+
+            arrayBombe.push(numRandom);
+
+        } else {
+
+        }
+
+
     }
+    return arrayBombe;
 }
